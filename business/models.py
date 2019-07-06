@@ -6,6 +6,7 @@ from profile_user.models import Profile
 class Business(models.Model):
     name = models.CharField(max_length=30)
     user_id = models.ForeignKey(User)
+    image = models.ImageField(upload_to='business/')
     neighbourhood_id = models.ForeignKey(Profile)
     email = models.EmailField()
     
