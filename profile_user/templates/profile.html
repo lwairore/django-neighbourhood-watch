@@ -1,0 +1,107 @@
+
+
+
+{%extends "registration/base.html"%}
+{% load bootstrap3 %}
+{% block content %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Neighbourhood</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#!" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Homepage
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/business/">Business</a>
+                <a class="dropdown-item" href="/events/">Events</a>
+                <a class="dropdown-item" href="/contact/">Contact</a>
+                
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/">Profile</a>
+              </div>
+            </li>
+            
+          </ul>
+          
+          <form class="form-inline my-2 my-lg-0" style="margin-top: 20%;margin-top:30%;  ">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+      {% block styles %}
+      {% bootstrap_css %}
+      
+    {% endblock %}
+<div class="container">
+  <h3 class="text-center">Profile</h3>
+  <hr>
+    
+      <div class="row">
+        <div class="col-md-4">
+            <figure class="figure img-thumbnail">
+                <img src="{{user_profile_details.image.url}}" class="figure-img img-fluid rounded" alt="...">
+                <figcaption class="figure-caption">{{current_user.username}}</figcaption>
+              </figure>
+
+        </div>
+        <div class="col-md-8">
+            <div class="card">
+                <h5 class="card-header">Personal Info.</h5>
+                <div class="card-body">
+                  <h5 class="card-title">Special title treatment</h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <dl>
+                      <dt class="card-title">Username</dt>
+                      <dd>
+                              <div class="card">
+                                      <div class="card-body">
+                                        {{current_user.username}}
+                                      </div>
+                                    </div>
+                      </dd>
+                  </dl>
+                  <dl>
+                      <dt class="card-title">Neighbourhood</dt>
+                      <dd>
+                              <div class="card">
+                                      <div class="card-body">
+                                        {{user_neighbourhood_id}}
+                                      </div>
+                                    </div>
+                      </dd>
+                  </dl>
+                  <dl>
+                      <dt class="card-title">Bio</dt>
+                      <dd>
+                              <div class="card">
+                                      <div class="card-body">
+                                        {{user_profile_details.bio}}
+                                      </div>
+                                    </div>
+                      </dd>
+                  </dl>
+                  <a href="{% url 'edit_profile' %}" class="btn btn-primary">Edit Profile</a>
+                </div>new_profile
+              </div>
+
+
+            
+        </div>
+          
+      </div>
+
+</div>
+
+{% endblock %}
