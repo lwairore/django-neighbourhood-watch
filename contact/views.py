@@ -16,6 +16,7 @@ def contact(request):
             new_contact = form.save(commit=False)
             new_contact.location = user_location.location
             new_contact.save()
+            form = NewContact()
 
     else:
         form = NewContact()

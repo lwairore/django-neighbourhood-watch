@@ -19,6 +19,7 @@ def business(request):
             new_business.user_id = current_user
             new_business.neighbourhood_id = user_location_id
             new_business.save()
+            form = NewBusiness()
     else:
         form = NewBusiness()
 

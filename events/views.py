@@ -18,6 +18,7 @@ def event(request):
             new_event = form.save(commit=False)
             new_event.location = user_location.location
             new_event.save()
+            form = NewEvent()
 
     else:
         form = NewEvent()
