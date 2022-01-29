@@ -1,4 +1,4 @@
-## Neighbourhood
+## Django Neighbourhood Watch
 This application allows you as the user to be in the loop about everything happening in your neighbourhood. From contact information to different handyman to meeting announcements or event alerts.
 ## User stories
 As a user I would like to:
