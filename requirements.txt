@@ -1,7 +1,7 @@
 config==0.3.9
 confusable-homoglyphs==3.2.0
 dj-database-url==0.5.0
-Django==1.11
+Django==2.2.28
 django-bootstrap3==11.0.0
 django-crispy-forms==1.7.2
 django-heroku==0.3.1
